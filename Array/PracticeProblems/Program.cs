@@ -24,7 +24,27 @@ namespace PracticeProblems
 
             //TwoDArrayToOneDArray.Run();
 
-            FizzBuzzArray.Run();
+            //FizzBuzzArray.Run();
+
+            //EmployeeBonusCalculator.Run();
+
+            //YoungestAndTallestFriend.Run();
+
+            //LargestSecondLargestDigit.Run();
+
+            //LargestSecondLargestDigitDynamic.Run();
+            
+            //ReverseNumberUsingArray.Run();
+
+            //BMICalculator.Run();
+
+            //BodyMassIndexUsing2DArray.Run();
+
+            //StudentGrade.Run()
+
+            //StudentGradeUsing2DArray.Run();
+
+            DigitFrequency.Run();
 
             Console.ReadLine();
         }
