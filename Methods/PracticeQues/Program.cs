@@ -78,6 +78,8 @@ namespace PracticeQues
             //StudentScoreCard.Run();
 
             MatrixOperations.Run();
+
+            Console.ReadLine();
         }
 
         
