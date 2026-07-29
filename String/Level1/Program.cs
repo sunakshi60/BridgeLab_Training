@@ -6,7 +6,17 @@ namespace Level1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //CompareStringsUsingCharAt.Run();
+
+            //SubstringUsingCharAt.Run();
+
+            //CharactersWithoutToCharArray.Run();
+
+            //NullReferenceExceptionDemo.Run();
+
+            StringIndexOutOfRangeExceptionDemo.Run();
+
+            Console.ReadLine();
         }
     }
 }
