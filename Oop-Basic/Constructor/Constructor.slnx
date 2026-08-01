@@ -1,5 +1,3 @@
 <Solution>
-  <Project Path="AccessModifiersQues/AccessModifiersQues.csproj" />
-  <Project Path="InstanceAndClassQues/InstanceAndClassQues.csproj" />
-  <Project Path="Level1/Level1.csproj" />
+  <Project Path="This-Static-Sealed-IsOperator/This-Static-Sealed-IsOperator.csproj" />
 </Solution>
