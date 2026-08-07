@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Regex/ValidateRegex.csproj" />
+  <Project Path="RegexTestProject/RegexTestProject.csproj" />
+</Solution>
