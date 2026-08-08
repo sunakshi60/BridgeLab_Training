@@ -119,16 +119,61 @@ namespace ValidateRegex
             //    Console.WriteLine("Invalid IP Address");
             //}
 
-            CreditCardValidator validator = new CreditCardValidator();
-            Console.Write("Enter Card Number: ");
-            string card = Console.ReadLine();
-            if (validator.ValidateCard(card))
+            //CreditCardValidator validator = new CreditCardValidator();
+            //Console.Write("Enter Card Number: ");
+            //string card = Console.ReadLine();
+            //if (validator.ValidateCard(card))
+            //{
+            //    Console.WriteLine("Valid Credit Card");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Invalid Credit Card");
+            //}
+
+
+            //ProgrammingLanguageExtractor extractor =new ProgrammingLanguageExtractor();
+            //Console.Write("Enter Text: ");
+            //string text = Console.ReadLine();
+            //List<string> languages = extractor.ExtractLanguages(text);
+            //Console.WriteLine("\nProgramming Languages:");
+            //foreach (string language in languages)
+            //{
+            //    Console.WriteLine(language);
+            //}
+
+
+            //CurrencyExtractor extractor = new CurrencyExtractor();
+            //Console.Write("Enter Text: ");
+            //string text = Console.ReadLine();
+            //List<string> values = extractor.ExtractCurrencyValues(text);
+            //Console.WriteLine("\nCurrency Values:");
+            //foreach (string value in values)
+            //{
+            //    Console.WriteLine(value);
+            //}
+
+            //RepeatingWordFinder finder = new RepeatingWordFinder();
+            //Console.Write("Enter Sentence: ");
+            //string text = Console.ReadLine();
+            //List<string> words = finder.FindRepeatingWords(text);
+            //Console.WriteLine("\nRepeating Words:");
+            //foreach (string word in words)
+            //{
+            //    Console.WriteLine(word);
+            //}
+
+
+            SSNValidator validator = new SSNValidator();
+            Console.Write("Enter SSN: ");
+            string ssn = Console.ReadLine();
+            if (validator.ValidateSSN(ssn))
             {
-                Console.WriteLine("Valid Credit Card");
+                Console.WriteLine("Valid SSN");
             }
             else
             {
-                Console.WriteLine("Invalid Credit Card");
+                Console.WriteLine("Invalid SSN");
             }
         }
     }

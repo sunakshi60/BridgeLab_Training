@@ -408,62 +408,216 @@ namespace RegexTestProject
 
 
         ////---------------------------Validate a Credit Card Number (Visa, MasterCard, etc.)-----------------
-        private CreditCardValidator validator;
+        //private CreditCardValidator validator;
+
+        //[SetUp]
+        //public void Setup()
+        //{
+        //    validator = new CreditCardValidator();
+        //}
+
+        //[Test]
+        //public void Valid_Visa_Card_Test()
+        //{
+        //    string card = "4123456789012345";
+
+        //    bool result = validator.ValidateCard(card);
+
+        //    Assert.That(result, Is.True);
+        //}
+
+        //[Test]
+        //public void Valid_MasterCard_Test()
+        //{
+        //    string card = "5123456789012345";
+
+        //    bool result = validator.ValidateCard(card);
+
+        //    Assert.That(result, Is.True);
+        //}
+
+        //[Test]
+        //public void Invalid_Starting_Digit_Should_Return_False()
+        //{
+        //    string card = "6123456789012345";
+
+        //    bool result = validator.ValidateCard(card);
+
+        //    Assert.That(result, Is.False);
+        //}
+
+        //[Test]
+        //public void Invalid_Length_Should_Return_False()
+        //{
+        //    string card = "41234567890";
+
+        //    bool result = validator.ValidateCard(card);
+
+        //    Assert.That(result, Is.False);
+        //}
+
+        //[Test]
+        //public void Card_With_Characters_Should_Return_False()
+        //{
+        //    string card = "41234ABCDE12345";
+
+        //    bool result = validator.ValidateCard(card);
+
+        //    Assert.That(result, Is.False);
+        //}
+
+        ////------------------------------Extract Programming Language Names from a Text------------------------------------------
+        //private ProgrammingLanguageExtractor extractor;
+
+        //[SetUp]
+        //public void Setup()
+        //{
+        //    extractor = new ProgrammingLanguageExtractor();
+        //}
+
+        //[Test]
+        //public void Extract_Programming_Languages_Test()
+        //{
+        //    string text = "I love Java, Python, and JavaScript, but I haven't tried Go yet.";
+        //    List<string> result = extractor.ExtractLanguages(text);
+        //    Assert.That(result.Count, Is.EqualTo(4));
+        //    Assert.That(result[0], Is.EqualTo("Java"));
+        //    Assert.That(result[1], Is.EqualTo("Python"));
+        //    Assert.That(result[2], Is.EqualTo("JavaScript"));
+        //    Assert.That(result[3], Is.EqualTo("Go"));
+        //}
+
+        //[Test]
+        //public void No_Programming_Language_Should_Return_Empty_List()
+        //{
+        //    string text = "I love coding and software development.";
+        //    List<string> result = extractor.ExtractLanguages(text);
+        //    Assert.That(result.Count, Is.EqualTo(0));
+        //}
+
+        //[Test]
+        //public void Language_Extraction_Should_Ignore_Case()
+        //{
+        //    string text = "I know JAVA and python.";
+        //    List<string> result = extractor.ExtractLanguages(text);
+        //    Assert.That(result.Count, Is.EqualTo(2));
+        //}
+
+
+        ////--------------------------------------Extract Currency Values from a Text-----------------------------------------------
+        //private CurrencyExtractor extractor;
+
+        //[SetUp]
+        //public void Setup()
+        //{
+        //    extractor = new CurrencyExtractor();
+        //}
+
+        //[Test]
+        //public void Extract_Currency_Values_Test()
+        //{
+        //    string text = "The price is $45.99, and the discount is $ 10.50.";
+        //    List<string> result = extractor.ExtractCurrencyValues(text);
+        //    Assert.That(result.Count, Is.EqualTo(2));
+        //    Assert.That(result[0], Is.EqualTo("$45.99"));
+        //    Assert.That(result[1], Is.EqualTo("10.50"));
+        //}
+
+        //[Test]
+        //public void Extract_Single_Currency_Value_Test()
+        //{
+        //    string text = "The price is $100.00.";
+        //    List<string> result = extractor.ExtractCurrencyValues(text);
+        //    Assert.That(result.Count, Is.EqualTo(1));
+        //    Assert.That(result[0], Is.EqualTo("$100.00"));
+        //}
+
+        //[Test]
+        //public void No_Currency_Should_Return_Empty_List()
+        //{
+        //    string text = "The product is expensive.";
+        //    List<string> result = extractor.ExtractCurrencyValues(text);
+        //    Assert.That(result.Count, Is.EqualTo(0));
+        //}
+
+
+        ////--------------------------------Find Repeating Words in a Sentence----------------------------------------------
+        //private RepeatingWordFinder finder;
+
+        //[SetUp]
+        //public void Setup()
+        //{
+        //    finder = new RepeatingWordFinder();
+        //}
+
+        //[Test]
+        //public void Find_Repeating_Words_Test()
+        //{
+        //    string text = "This is is a repeated repeated word test.";
+        //    List<string> result = finder.FindRepeatingWords(text);
+        //    Assert.That(result.Count, Is.EqualTo(2));
+        //    Assert.That(result[0], Is.EqualTo("is"));
+        //    Assert.That(result[1], Is.EqualTo("repeated"));
+        //}
+
+        //[Test]
+        //public void No_Repeating_Words_Should_Return_Empty_List()
+        //{
+        //    string text = "This is a simple sentence.";
+        //    List<string> result = finder.FindRepeatingWords(text);
+        //    Assert.That(result.Count, Is.EqualTo(0));
+        //}
+
+        //[Test]
+        //public void Repeating_Words_Should_Ignore_Case()
+        //{
+        //    string text = "This is IS a test.";
+        //    List<string> result = finder.FindRepeatingWords(text);
+        //    Assert.That(result.Count, Is.EqualTo(1));
+        //    Assert.That(result[0], Is.EqualTo("is"));
+        //}
+
+
+        ////----------------------------------Validate a Social Security Number (SSN)------------------------------------------
+        private SSNValidator validator;
 
         [SetUp]
         public void Setup()
         {
-            validator = new CreditCardValidator();
+            validator = new SSNValidator();
         }
 
         [Test]
-        public void Valid_Visa_Card_Test()
+        public void Valid_SSN_Test()
         {
-            string card = "4123456789012345";
-
-            bool result = validator.ValidateCard(card);
-
+            string ssn = "123-45-6789";
+            bool result = validator.ValidateSSN(ssn);
             Assert.That(result, Is.True);
         }
 
         [Test]
-        public void Valid_MasterCard_Test()
+        public void SSN_Without_Hyphens_Should_Be_Invalid()
         {
-            string card = "5123456789012345";
-
-            bool result = validator.ValidateCard(card);
-
-            Assert.That(result, Is.True);
-        }
-
-        [Test]
-        public void Invalid_Starting_Digit_Should_Return_False()
-        {
-            string card = "6123456789012345";
-
-            bool result = validator.ValidateCard(card);
-
+            string ssn = "123456789";
+            bool result = validator.ValidateSSN(ssn);
             Assert.That(result, Is.False);
         }
 
         [Test]
-        public void Invalid_Length_Should_Return_False()
+        public void SSN_With_Wrong_Format_Should_Be_Invalid()
         {
-            string card = "41234567890";
-
-            bool result = validator.ValidateCard(card);
-
+            string ssn = "12-345-6789";
+            bool result = validator.ValidateSSN(ssn);
             Assert.That(result, Is.False);
         }
 
         [Test]
-        public void Card_With_Characters_Should_Return_False()
+        public void SSN_With_Letters_Should_Be_Invalid()
         {
-            string card = "41234ABCDE12345";
-
-            bool result = validator.ValidateCard(card);
-
+            string ssn = "ABC-45-6789";
+            bool result = validator.ValidateSSN(ssn);
             Assert.That(result, Is.False);
         }
+
     }
 }
