@@ -1,6 +1,5 @@
 using System;
 
-
 namespace SmartHomeDevice 
 {
     //abstract base class for all smart home devices
