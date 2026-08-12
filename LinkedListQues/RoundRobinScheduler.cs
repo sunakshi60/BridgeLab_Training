@@ -1,6 +1,6 @@
 using System;
 
-namespace RoundRobinScheduling
+namespace LinkedListQues
 {
     public class Process
     {

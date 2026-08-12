@@ -1,6 +1,6 @@
 using System;
 
-namespace LibraryManagement
+namespace LinkedLinkQues
 {
     public class Book
     {

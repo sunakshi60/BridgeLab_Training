@@ -1,6 +1,6 @@
 using System;
 
-namespace InventoryManagement
+namespace LinkedLinkQues
 {
     public class Item
     {

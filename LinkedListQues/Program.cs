@@ -1,7 +1,4 @@
-﻿using InventoryManagement;
-using LibraryManagement;
-using RoundRobinScheduling;
-using System;
+﻿using System;
 
 namespace LinkedListQues
 {
@@ -240,6 +237,156 @@ namespace LinkedListQues
             //int timeQuantum = 2;
             //Console.WriteLine($"Time Quantum = {timeQuantum}");
             //scheduler.SimulateRoundRobin(timeQuantum);
+
+
+
+
+            //SocialMediaLinkedList socialMedia =new SocialMediaLinkedList();
+            //User user1 = new User(101,"Rahul",21);
+            //User user2 = new User(102,"Priya",20);
+            //User user3 = new User(103,"Aman",22);
+            //User user4 = new User(104,"Neha", 21);
+            //User user5 = new User(105,"Riya", 20);
+            //Console.WriteLine("\n1. ADD USERS");
+            //socialMedia.AddUser(user1);
+            //socialMedia.AddUser(user2);
+            //socialMedia.AddUser(user3);
+            //socialMedia.AddUser(user4);
+            //socialMedia.AddUser(user5);
+            //Console.WriteLine("\n2. DISPLAY ALL USERS");
+            //socialMedia.DisplayAllUsers();
+            //Console.WriteLine("\n3. ADD FRIEND CONNECTIONS");
+            //socialMedia.AddFriendConnection(101,102);
+            //socialMedia.AddFriendConnection(101,103);
+            //socialMedia.AddFriendConnection(101,104);
+            //socialMedia.AddFriendConnection(102,103);
+            //socialMedia.AddFriendConnection(102,105);
+            //socialMedia.AddFriendConnection(103, 105);
+            //Console.WriteLine("\n4. DISPLAY FRIENDS");
+            //socialMedia.DisplayFriends(101);
+            //socialMedia.DisplayFriends(102);
+            //socialMedia.DisplayFriends(103);
+            //Console.WriteLine("\n5. SEARCH BY USER ID");
+            //User foundUser =socialMedia.SearchByUserId(103);
+            //if (foundUser != null)
+            //{
+            //    Console.WriteLine("User found:");
+            //    foundUser.Display();
+            //}
+            //else
+            //{
+            //    Console.WriteLine("User not found.");
+            //}
+            //Console.WriteLine("\n6. SEARCH BY NAME");
+            //User userByName =socialMedia.SearchByName("Neha");
+            //if (userByName != null)
+            //{
+            //    Console.WriteLine("User found:");
+            //    userByName.Display();
+            //}
+            //else
+            //{
+            //    Console.WriteLine("User not found.");
+            //}
+            //Console.WriteLine("\n7. FIND MUTUAL FRIENDS");
+            //socialMedia.FindMutualFriends(101,102);
+            //Console.WriteLine("\n8. COUNT FRIENDS");
+            //int count = socialMedia.CountFriends(101);
+            //Console.WriteLine($"Rahul has {count} friends.");
+            //Console.WriteLine( "\n9. FRIEND COUNT FOR EACH USER");
+            //socialMedia.DisplayFriendCounts();
+            //Console.WriteLine("\n10. REMOVE FRIEND CONNECTION");
+            //socialMedia.RemoveFriendConnection(101,104);
+            //Console.WriteLine("\n11. FRIENDS AFTER REMOVAL" );
+            //socialMedia.DisplayFriends(101);
+            //socialMedia.DisplayFriends(104);
+            //Console.WriteLine("\n12. FINAL FRIEND COUNTS");
+            //socialMedia.DisplayFriendCounts();
+
+
+
+            //TextEditorHistory editor =new TextEditorHistory(10);
+            //Console.WriteLine("\n1. ADD INITIAL STATE");
+            //editor.AddState("");
+            //editor.DisplayCurrentState();
+            //Console.WriteLine("\n2. TYPE FIRST WORD");
+            //editor.AddState("Hello");
+            //editor.DisplayCurrentState();
+            //Console.WriteLine( "\n3. TYPE SECOND WORD");
+            //editor.AddState("Hello World");
+            //editor.DisplayCurrentState();
+            //Console.WriteLine("\n4. ADD MORE TEXT");
+            //editor.AddState("Hello World! Welcome");
+            //editor.DisplayCurrentState();
+            //Console.WriteLine("\n5. UNDO");
+            //editor.Undo();
+            //Console.WriteLine("\n6. UNDO AGAIN");
+            //editor.Undo();
+            //Console.WriteLine("\n7. REDO");
+            //editor.Redo();
+            //Console.WriteLine("\n8. CURRENT STATE");
+            //editor.DisplayCurrentState();
+            //Console.WriteLine("\n9. COMPLETE HISTORY");
+            //editor.DisplayHistory();
+            //Console.WriteLine("\n10. HISTORY SIZE");
+            //editor.DisplayHistorySize();
+            //Console.WriteLine("\n11. NEW ACTION AFTER UNDO");
+            //editor.Undo();
+            //editor.AddState("Hello Everyone");
+            //editor.DisplayHistory();
+            //Console.WriteLine("\n12. TEST HISTORY LIMIT");
+            //editor.AddState("State 1");
+            //editor.AddState("State 2");
+            //editor.AddState("State 3");
+            //editor.AddState("State 4");
+            //editor.AddState("State 5");
+            //editor.AddState("State 6");
+            //editor.AddState("State 7");
+            //editor.AddState("State 8");
+            //editor.AddState("State 9");
+            //editor.AddState("State 10");
+            //editor.AddState("State 11");
+            //editor.DisplayHistory();
+            //editor.DisplayHistorySize();
+            //Console.WriteLine( "\n13. FINAL UNDO");
+            //editor.Undo();
+            //editor.DisplayCurrentState();
+            //Console.WriteLine("\n14. FINAL REDO");
+            //editor.Redo();
+            //editor.DisplayCurrentState();
+
+
+            TicketCircularLinkedList bookingSystem = new TicketCircularLinkedList();
+            Ticket ticket1 = new Ticket(101,"Rahul","Avengers","A10",DateTime.Now);
+            Ticket ticket2 = new Ticket(102,"Priya","Avengers","A11",DateTime.Now);
+            Ticket ticket3 = new Ticket(103,"Aman","Batman","B05",DateTime.Now);
+            Ticket ticket4 = new Ticket(104,"Neha","Avengers","A12",DateTime.Now);
+            Ticket ticket5 = new Ticket(105,"Riya","Batman","B06",DateTime.Now);
+            Console.WriteLine("\n1. ADD TICKETS");
+            bookingSystem.AddTicket(ticket1);
+            bookingSystem.AddTicket(ticket2);
+            bookingSystem.AddTicket(ticket3);
+            bookingSystem.AddTicket(ticket4);
+            bookingSystem.AddTicket(ticket5);
+            Console.WriteLine("\n2. DISPLAY CURRENT TICKETS");
+            bookingSystem.DisplayTickets();
+            Console.WriteLine("\n3. SEARCH BY CUSTOMER NAME");
+            bookingSystem.SearchByCustomerName("Priya");
+            Console.WriteLine("\n4. SEARCH BY MOVIE NAME");
+            bookingSystem.SearchByMovieName("Avengers");
+            Console.WriteLine("\n5. TOTAL BOOKED TICKETS");
+            bookingSystem.DisplayTicketCount();
+            Console.WriteLine("\n6. REMOVE TICKET");
+            bookingSystem.RemoveTicket(103);
+            Console.WriteLine("\n7. TICKETS AFTER REMOVAL");
+            bookingSystem.DisplayTickets();
+            Console.WriteLine("\n8. UPDATED TICKET COUNT");
+            bookingSystem.DisplayTicketCount();
+            Console.WriteLine("\n9. REMOVE FIRST TICKET");
+            bookingSystem.RemoveTicket(101);
+            bookingSystem.DisplayTickets();
+            Console.WriteLine("\n10. FINAL TICKET COUNT");
+            bookingSystem.DisplayTicketCount();
 
 
             Console.ReadLine();
