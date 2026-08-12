@@ -1,0 +1,248 @@
+﻿using InventoryManagement;
+using LibraryManagement;
+using RoundRobinScheduling;
+using System;
+
+namespace LinkedListQues
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //StudentLinkedList students = new StudentLinkedList();
+            //Student student1 = new Student(101, "Rahul", 20, 'A');
+            //Student student2 = new Student(102, "Priya", 21, 'B');
+            //Student student3 = new Student(103, "Aman", 20, 'A');
+            //Student student4 = new Student(104, "Neha", 22, 'C');
+            //Student student5 = new Student(105, "Riya", 21, 'B');
+            //Console.WriteLine("\n1. ADD AT BEGINNING");
+            //students.AddAtBeginning(student1);
+            //students.DisplayAll();
+            //Console.WriteLine("\n2. ADD AT END");
+            //students.AddAtEnd(student2);
+            //students.AddAtEnd(student3);
+            //students.DisplayAll();
+            //Console.WriteLine("\n3. ADD AT POSITION");
+            //students.AddAtPosition(student4, 2);
+            //students.DisplayAll();
+            //Console.WriteLine("\n4. SEARCH STUDENT");
+            //Student result = students.SearchByRollNumber(103);
+            //if (result != null)
+            //{
+            //    Console.WriteLine("Student found:");
+            //    result.Display();
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Student not found.");
+            //}
+            //Console.WriteLine("\n5. UPDATE GRADE");
+            //students.UpdateGrade(102, 'A');
+            //students.DisplayAll();
+            //Console.WriteLine("\n6. DELETE STUDENT");
+            //students.DeleteByRollNumber(103);
+            //students.DisplayAll();
+            //Console.WriteLine("\n7. ADD ANOTHER STUDENT");
+            //students.AddAtEnd(student5);
+            //students.DisplayAll();
+
+
+
+            //MovieLinkedList movies = new MovieLinkedList();
+            //Movie movie1 = new Movie("Inception","Christopher Nolan",2010, 8.8);
+            //Movie movie2 = new Movie(Interstellar","Christopher Nolan",2014,8.7);
+            //Movie movie3 = new Movie("Titanic","James Cameron",1997,7.9);
+            //Movie movie4 = new Movie("Avatar","James Cameron",2009,7.8);
+            //Movie movie5 = new Movie("The Matrix","Lana Wachowski",1999,8.7);
+            //Console.WriteLine("\n1. ADD AT BEGINNING");
+            //movies.AddAtBeginning(movie1);
+            //movies.DisplayForward();
+            //Console.WriteLine("\n2. ADD AT END");
+            //movies.AddAtEnd(movie2);
+            //movies.AddAtEnd(movie3);
+            //movies.DisplayForward();
+            //Console.WriteLine("\n3. ADD AT POSITION");
+            //movies.AddAtPosition(movie4, 2);
+            //movies.DisplayForward();
+            //Console.WriteLine("\n4. DISPLAY REVERSE");
+            //movies.DisplayReverse();
+            //Console.WriteLine("\n5. SEARCH BY DIRECTOR");
+            //movies.SearchByDirector("Christopher Nolan");
+            //Console.WriteLine("\n6. SEARCH BY RATING");
+            //movies.SearchByRating(8.7);
+            //Console.WriteLine("\n7. UPDATE RATING");
+            //movies.UpdateRating("Titanic", 8.0);
+            //movies.DisplayForward();
+            //Console.WriteLine("\n8. REMOVE MOVIE");
+            //movies.RemoveByTitle("Avatar");
+            //movies.DisplayForward();
+            //Console.WriteLine("\n9. ADD ANOTHER MOVIE");
+            //movies.AddAtEnd(movie5);
+            //movies.DisplayForward();
+            //Console.WriteLine("\n10. FINAL REVERSE DISPLAY");
+            //movies.DisplayReverse();
+
+
+
+
+            //TaskCircularList tasks = new TaskCircularList();
+            //TaskItem task1 = new TaskItem(101,"Complete Assignment",1,new DateTime(2026, 8, 15));
+            //TaskItem task2 = new TaskItem(102,"Prepare Presentation",2, new DateTime(2026, 8, 17));
+            //TaskItem task3 = new TaskItem(103,"Attend Meeting",1,new DateTime(2026, 8, 14));
+            //TaskItem task4 = new TaskItem(104, "Submit Report",3,new DateTime(2026, 8, 20));
+            //TaskItem task5 = new TaskItem(105,"Review Code",2,new DateTime(2026, 8, 18));
+            //Console.WriteLine("\n1. ADD AT BEGINNING");
+            //tasks.AddAtBeginning(task1);
+            //tasks.DisplayAll();
+            //Console.WriteLine("\n2. ADD AT END");
+            //tasks.AddAtEnd(task2);
+            //tasks.AddAtEnd(task3);
+            //tasks.DisplayAll();
+            //Console.WriteLine("\n3. ADD AT POSITION");
+            //tasks.AddAtPosition(task4, 2);
+            //tasks.DisplayAll();
+            //Console.WriteLine("\n4. VIEW CURRENT TASK");
+            //tasks.ViewCurrentTask();
+            //Console.WriteLine("\n5. MOVE TO NEXT TASK");
+            //tasks.MoveToNextTask();
+            //tasks.MoveToNextTask();
+            //Console.WriteLine("\n6. SEARCH BY PRIORITY");
+            //tasks.SearchByPriority(1);
+            //Console.WriteLine("\n7. REMOVE TASK");
+            //tasks.RemoveByTaskId(103);
+            //tasks.DisplayAll();
+            //Console.WriteLine("\n8. ADD ANOTHER TASK");
+            //tasks.AddAtEnd(task5);
+            //tasks.DisplayAll();
+            //Console.WriteLine("\n9. CIRCULAR TASK MOVEMENT");
+            //tasks.ViewCurrentTask();
+            //tasks.MoveToNextTask();
+            //tasks.MoveToNextTask();
+            //tasks.MoveToNextTask();
+            //tasks.MoveToNextTask();
+
+
+
+
+            //InventoryLinkedList inventory = new InventoryLinkedList();
+            //Item item1 = new Item(101,"Laptop",5,55000);
+            //Item item2 = new Item(102,"Mouse",20,800);
+            //Item item3 = new Item(103,"Keyboard",15,1500);
+            //Item item4 = new Item(104,"Monitor",10,12000);
+            //Item item5 = new Item(105,"Headphones",25,2500);
+            //Console.WriteLine("\n1. ADD AT BEGINNING");
+            //inventory.AddAtBeginning(item1);
+            //inventory.DisplayAll();
+            //Console.WriteLine("\n2. ADD AT END");
+            //inventory.AddAtEnd(item2);
+            //inventory.AddAtEnd(item3);
+            //inventory.DisplayAll();
+            //Console.WriteLine("\n3. ADD AT POSITION");
+            //inventory.AddAtPosition(item4, 2);
+            //inventory.DisplayAll();
+            //Console.WriteLine("\n4. SEARCH BY ITEM ID");
+            //Item foundItem = inventory.SearchByItemId(103);
+            //if (foundItem != null)
+            //{
+            //    Console.WriteLine("Item found:");
+            //    foundItem.Display();
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Item not found.");
+            //}
+            //Console.WriteLine("\n5. SEARCH BY ITEM NAME");
+            //inventory.SearchByItemName("Mouse");
+            //Console.WriteLine("\n6. UPDATE QUANTITY");
+            //inventory.UpdateQuantity(102, 30);
+            //inventory.DisplayAll();
+            //Console.WriteLine("\n7. TOTAL INVENTORY VALUE");
+            //inventory.DisplayTotalValue();
+            //Console.WriteLine("\n8. REMOVE ITEM");
+            //inventory.RemoveByItemId(103);
+            //inventory.DisplayAll();
+            //Console.WriteLine("\n9. ADD ANOTHER ITEM");
+            //inventory.AddAtEnd(item5);
+            //inventory.DisplayAll();
+            //Console.WriteLine("\n10. SORT BY NAME - ASCENDING");
+            //inventory.SortByName(true);
+            //inventory.DisplayAll();
+            //Console.WriteLine("\n11. SORT BY NAME - DESCENDING");
+            //inventory.SortByName(false);
+            //inventory.DisplayAll();
+            //Console.WriteLine("\n12. SORT BY PRICE - ASCENDING");
+            //inventory.SortByPrice(true);
+            //inventory.DisplayAll();
+            //Console.WriteLine("\n13. SORT BY PRICE - DESCENDING");
+            //inventory.SortByPrice(false);
+            //inventory.DisplayAll();
+            //Console.WriteLine("\n14. FINAL INVENTORY VALUE");
+            //inventory.DisplayTotalValue();
+
+
+
+
+
+            //LibraryDoublyLinkedList library =new LibraryDoublyLinkedList();
+            //Book book1 = new Book(101,"The Alchemist","Paulo Coelho","Fiction",true);
+            //Book book2 = new Book(102,"Harry Potter","J.K. Rowling","Fantasy",true);
+            //Book book3 = new Book(103,"The Hobbit","J.R.R. Tolkien","Fantasy",false);
+            //Book book4 = new Book(104,"Atomic Habits", "James Clear","Self Help",true);
+            //Book book5 = new Book(105,"Ikigai","Hector Garcia","Self Help",true);
+            //Console.WriteLine("\n1. ADD AT BEGINNING");
+            //library.AddAtBeginning(book1);
+            //library.DisplayForward();
+            //Console.WriteLine("\n2. ADD AT END");
+            //library.AddAtEnd(book2);
+            //library.AddAtEnd(book3);
+            //library.DisplayForward();
+            //Console.WriteLine("\n3. ADD AT POSITION");
+            //library.AddAtPosition(book4, 2);
+            //library.DisplayForward();
+            //Console.WriteLine("\n4. DISPLAY FORWARD");
+            //library.DisplayForward();
+            //Console.WriteLine("\n5. DISPLAY REVERSE");
+            //library.DisplayReverse();
+            //Console.WriteLine("\n6. SEARCH BY TITLE");
+            //library.SearchByTitle("Harry Potter");
+            //Console.WriteLine("\n7. SEARCH BY AUTHOR");
+            //library.SearchByAuthor("J.K. Rowling");
+            //Console.WriteLine("\n8. UPDATE AVAILABILITY");
+            //library.UpdateAvailability(103, true);
+            //library.DisplayForward();
+            //Console.WriteLine("\n9. REMOVE BOOK");
+            //library.RemoveByBookId(104);
+            //library.DisplayForward();
+            //Console.WriteLine("\n10. ADD ANOTHER BOOK");
+            //library.AddAtEnd(book5);
+            //library.DisplayForward();
+            //Console.WriteLine("\n11. COUNT BOOKS");
+            //library.DisplayBookCount();
+            //Console.WriteLine("\n12. FINAL REVERSE DISPLAY");
+            //library.DisplayReverse();
+
+
+
+
+            //RoundRobinScheduler scheduler = new RoundRobinScheduler();
+            //Process process1 =new Process(101, 8, 1);
+            //Process process2 =new Process(102, 4, 2);
+            //Process process3 =new Process(103, 6, 1);
+            //Process process4 =new Process(104, 5, 3);
+            //Console.WriteLine("\n1. ADD PROCESSES");
+            //scheduler.AddProcess(process1);
+            //scheduler.AddProcess(process2);
+            //scheduler.AddProcess(process3);
+            //scheduler.AddProcess(process4);
+            //Console.WriteLine("\n2. INITIAL PROCESS QUEUE");
+            //scheduler.DisplayProcesses();
+            //Console.WriteLine("\n3. ROUND ROBIN SIMULATION");
+            //int timeQuantum = 2;
+            //Console.WriteLine($"Time Quantum = {timeQuantum}");
+            //scheduler.SimulateRoundRobin(timeQuantum);
+
+
+            Console.ReadLine();
+        }
+    }
+}
