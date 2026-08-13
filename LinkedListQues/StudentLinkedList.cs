@@ -19,9 +19,7 @@ namespace LinkedListQues
 
 		public void Display()
 		{
-			Console.WriteLine(
-				$"Roll Number: {RollNumber}, Name: {Name}, Age: {Age}, Grade: {Grade}"
-			);
+			Console.WriteLine($"Roll Number: {RollNumber}, Name: {Name}, Age: {Age}, Grade: {Grade}");
 		}
 	}
 

@@ -6,6 +6,79 @@ namespace LinkedListQues
     {
         static void Main(string[] args)
         {
+            //EmployeeLinkedList employees = new EmployeeLinkedList();
+            //Employee employee1 = new Employee(101, "Sunakshi", "CSE", 16000);
+            //Employee employee2 = new Employee(102, "Priya", "CSE", 22000);
+            //Employee employee3 = new Employee(103, "Akansha", "CSE", 13000);
+            //Employee employee4 = new Employee(104, "Preeti", "CSE", 8000);
+            //Employee employee5 = new Employee(105, "Krish", "CSE", 9000);
+            //Console.WriteLine("\n1. ADD AT BEGINNING");
+            //employees.AddAtBeginning(employee1);
+            //employees.DisplayAll();
+            //Console.WriteLine("\n2. ADD AT END");
+            //employees.AddAtEnd(employee2);
+            //employees.AddAtEnd(employee3);
+            //employees.DisplayAll();
+            //Console.WriteLine("\n3. ADD AT POSITION");
+            //employees.AddAtPosition(employee4, 2);
+            //employees.DisplayAll();
+            //Console.WriteLine("\n4. ADD KRISH AT END");
+            //employees.AddAtEnd(employee5);
+            //employees.DisplayAll();
+            //Console.WriteLine("\n5. SEARCH EMPLOYEE BY ID");
+            //Employee resultById = employees.SearchById(103);
+            //if (resultById != null)
+            //{
+            //    Console.WriteLine("Employee found:");
+            //    resultById.Display();
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Employee not found.");
+            //}
+            //Console.WriteLine("\n6. SEARCH EMPLOYEE BY NAME");
+            //Employee resultByName = employees.SearchByName("Preeti");
+            //if (resultByName != null)
+            //{
+            //    Console.WriteLine("Employee found:");
+            //    resultByName.Display();
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Employee not found.");
+            //}
+            //Console.WriteLine("\n7. DELETE EMPLOYEE BY ID");
+            //employees.DeleteById(102);
+            //employees.DisplayAll();
+
+
+            Playlist playlist = new Playlist();
+            Song song1 = new Song("Shape of You","Ed Sheeran", 4.24);
+            Song song2 =new Song("Perfect","Ed Sheeran",4.39 );
+            Song song3 =new Song("Believer","Imagine Dragons",3.24);
+            Song song4 =new Song("Closer","The Chainsmokers",4.05);
+            Song song5 =new Song("Faded","Alan Walker",3.32);
+            Console.WriteLine("\n1. ADD SONG AT BEGINNING");
+            playlist.AddAtBeginning(song1);
+            playlist.DisplayPlaylist();
+            Console.WriteLine("\n2. ADD SONG AT END");
+            playlist.AddAtEnd(song2);
+            playlist.AddAtEnd(song3);
+            playlist.DisplayPlaylist();
+            Console.WriteLine("\n3. ADD SONG AT POSITION 2");
+            playlist.AddAtPosition(song4, 2);
+            playlist.DisplayPlaylist();
+            Console.WriteLine("\n4. ADD FADED AT END");
+            playlist.AddAtEnd(song5);
+            playlist.DisplayPlaylist();
+            Console.WriteLine("\n5. PLAY NEXT SONG");
+            playlist.PlayNextSong();
+            playlist.PlayNextSong();
+            playlist.PlayNextSong();
+            Console.WriteLine("\n6. DELETE SONG: Perfect");
+            playlist.DeleteSong("Perfect");
+            playlist.DisplayPlaylist();
+
             //StudentLinkedList students = new StudentLinkedList();
             //Student student1 = new Student(101, "Rahul", 20, 'A');
             //Student student2 = new Student(102, "Priya", 21, 'B');
@@ -356,37 +429,37 @@ namespace LinkedListQues
             //editor.DisplayCurrentState();
 
 
-            TicketCircularLinkedList bookingSystem = new TicketCircularLinkedList();
-            Ticket ticket1 = new Ticket(101,"Rahul","Avengers","A10",DateTime.Now);
-            Ticket ticket2 = new Ticket(102,"Priya","Avengers","A11",DateTime.Now);
-            Ticket ticket3 = new Ticket(103,"Aman","Batman","B05",DateTime.Now);
-            Ticket ticket4 = new Ticket(104,"Neha","Avengers","A12",DateTime.Now);
-            Ticket ticket5 = new Ticket(105,"Riya","Batman","B06",DateTime.Now);
-            Console.WriteLine("\n1. ADD TICKETS");
-            bookingSystem.AddTicket(ticket1);
-            bookingSystem.AddTicket(ticket2);
-            bookingSystem.AddTicket(ticket3);
-            bookingSystem.AddTicket(ticket4);
-            bookingSystem.AddTicket(ticket5);
-            Console.WriteLine("\n2. DISPLAY CURRENT TICKETS");
-            bookingSystem.DisplayTickets();
-            Console.WriteLine("\n3. SEARCH BY CUSTOMER NAME");
-            bookingSystem.SearchByCustomerName("Priya");
-            Console.WriteLine("\n4. SEARCH BY MOVIE NAME");
-            bookingSystem.SearchByMovieName("Avengers");
-            Console.WriteLine("\n5. TOTAL BOOKED TICKETS");
-            bookingSystem.DisplayTicketCount();
-            Console.WriteLine("\n6. REMOVE TICKET");
-            bookingSystem.RemoveTicket(103);
-            Console.WriteLine("\n7. TICKETS AFTER REMOVAL");
-            bookingSystem.DisplayTickets();
-            Console.WriteLine("\n8. UPDATED TICKET COUNT");
-            bookingSystem.DisplayTicketCount();
-            Console.WriteLine("\n9. REMOVE FIRST TICKET");
-            bookingSystem.RemoveTicket(101);
-            bookingSystem.DisplayTickets();
-            Console.WriteLine("\n10. FINAL TICKET COUNT");
-            bookingSystem.DisplayTicketCount();
+            //TicketCircularLinkedList bookingSystem = new TicketCircularLinkedList();
+            //Ticket ticket1 = new Ticket(101,"Rahul","Avengers","A10",DateTime.Now);
+            //Ticket ticket2 = new Ticket(102,"Priya","Avengers","A11",DateTime.Now);
+            //Ticket ticket3 = new Ticket(103,"Aman","Batman","B05",DateTime.Now);
+            //Ticket ticket4 = new Ticket(104,"Neha","Avengers","A12",DateTime.Now);
+            //Ticket ticket5 = new Ticket(105,"Riya","Batman","B06",DateTime.Now);
+            //Console.WriteLine("\n1. ADD TICKETS");
+            //bookingSystem.AddTicket(ticket1);
+            //bookingSystem.AddTicket(ticket2);
+            //bookingSystem.AddTicket(ticket3);
+            //bookingSystem.AddTicket(ticket4);
+            //bookingSystem.AddTicket(ticket5);
+            //Console.WriteLine("\n2. DISPLAY CURRENT TICKETS");
+            //bookingSystem.DisplayTickets();
+            //Console.WriteLine("\n3. SEARCH BY CUSTOMER NAME");
+            //bookingSystem.SearchByCustomerName("Priya");
+            //Console.WriteLine("\n4. SEARCH BY MOVIE NAME");
+            //bookingSystem.SearchByMovieName("Avengers");
+            //Console.WriteLine("\n5. TOTAL BOOKED TICKETS");
+            //bookingSystem.DisplayTicketCount();
+            //Console.WriteLine("\n6. REMOVE TICKET");
+            //bookingSystem.RemoveTicket(103);
+            //Console.WriteLine("\n7. TICKETS AFTER REMOVAL");
+            //bookingSystem.DisplayTickets();
+            //Console.WriteLine("\n8. UPDATED TICKET COUNT");
+            //bookingSystem.DisplayTicketCount();
+            //Console.WriteLine("\n9. REMOVE FIRST TICKET");
+            //bookingSystem.RemoveTicket(101);
+            //bookingSystem.DisplayTickets();
+            //Console.WriteLine("\n10. FINAL TICKET COUNT");
+            //bookingSystem.DisplayTicketCount();
 
 
             Console.ReadLine();
