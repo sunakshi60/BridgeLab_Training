@@ -8,7 +8,7 @@ namespace C_Streams {
         {
             //FileHandling.Run();
 
-            //BufferedStreams.Run();
+            BufferedStreams.Run();
 
             //UserInputFile.Run();
 
@@ -24,7 +24,7 @@ namespace C_Streams {
 
             //LargeFileReader.Run();
 
-            WordCounter.Run();
+            //WordCounter.Run();
 
         }
     }

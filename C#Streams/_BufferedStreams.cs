@@ -11,7 +11,7 @@ namespace C_Streams
         const int BufferSize = 4096;
         public static void Run()
         {     
-            string sourceFile = "largefile.txt";
+            string sourceFile = @"D:\\C#\\BridgeLabTraining\\C#Collections-Streams\\C#Streams\largefile.txt";
             string normalCopy = "normal_copy.txt";
             string bufferedCopy = "buffered_copy.txt";
 
