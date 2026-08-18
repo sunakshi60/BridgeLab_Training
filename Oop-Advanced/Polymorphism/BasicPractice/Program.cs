@@ -26,17 +26,19 @@ namespace BasicPractice
             //Dog4 dog = new Dog4();
             //dog.Sound();
 
-            //Animal5 animal = new Dog5();
-            //animal.Sound();
-            //animal.Eat();
+            Animal5 animal = new Cat5();
+            animal.Eat();
+            animal.Sound();
+            
 
-            IPayment payment;
-            payment = new CreditCard();
-            payment.Pay();
-            payment = new UPI();
-            payment.Pay();
-            payment = new NetBanking();
-            payment.Pay();
+            //IPayment payment;
+            //payment = new CreditCard();
+            //payment.Pay();
+            //payment = new UPI();
+            //payment.Pay();
+            //payment = new NetBanking();
+            //payment.Pay();
+
             Console.ReadLine();
         }
 
