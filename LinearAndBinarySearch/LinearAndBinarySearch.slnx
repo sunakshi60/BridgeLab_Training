@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="StringBuilder/StringBuilder.csproj" />
+  <Project Path="BinarySearchProblems/BinarySearchProblems.csproj" />
+  <Project Path="LinearSearchProblems/LinearSearchProblems.csproj" />
 </Solution>

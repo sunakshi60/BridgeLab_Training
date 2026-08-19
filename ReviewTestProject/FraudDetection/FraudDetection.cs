@@ -59,7 +59,8 @@ namespace FraudDetection
             {
                 return Result.Invalid("Invalid transaction");
             }
-            //Regex validates
+
+            //Regex
             Match match = Regex.Match(
                 mess,
                 @"^CARD:(?<card>\d{4}-XXXX-XXXX-\d{4}) \| MCC:(?<mcc>\d{4}) \| AMT:(?<amount>\d+\.\d{2}) \| TS:(?<timestamp>\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2})$"
@@ -93,7 +94,7 @@ namespace FraudDetection
     }
 
 
-    //Generic class stores by card number and by hour
+    //Generic class stores transactions by card number and by hour
     public class TransactionStore<T> where T : Transaction
     {
         private Dictionary<string, List<T>> transactionsByCard;
