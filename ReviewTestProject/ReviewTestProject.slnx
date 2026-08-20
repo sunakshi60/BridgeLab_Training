@@ -1,4 +1,3 @@
 <Solution>
-  <Project Path="FraudDetection/FraudDetection.csproj" />
-  <Project Path="ReviewTestProject/ReviewTestProject.csproj" />
+  <Project Path="ReviewQues/ReviewQues.csproj" />
 </Solution>
