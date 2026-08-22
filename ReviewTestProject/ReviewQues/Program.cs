@@ -25,6 +25,22 @@ class Program
             Console.WriteLine("Input is Empty.");
         }
 
+        //Console.Write("Enter a single value: ");
+        //char ch = Convert.ToChar(Console.ReadLine());
+
+        //if (char.IsLetter(ch))
+        //{
+        //    Console.WriteLine("The entered value is a Character.");
+        //}
+        //else if (char.IsDigit(ch))
+        //{
+        //    Console.WriteLine("The entered value is an Integer.");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("The entered value is a Special Symbol.");
+        //}
+
         Console.ReadKey();
     }
 }

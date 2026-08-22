@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="AnnotationProblems/AnnotationProblems.csproj" />
+  <Project Path="ReflectionProblems/ReflectionProblems.csproj" />
+</Solution>
