@@ -8,18 +8,14 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<None Update="students.csv">
+		<None Update="ipl.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="contact.json">
+		<None Update="ipl.csv">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="Newtonsoft.Json.Schema" Version="4.0.1" />
 	</ItemGroup>
 </Project>
