@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BranchCashDepositReconciliation/BranchCashDepositReconciliation.csproj" />
+  <Project Path="TestingBankCashDeposit/TestingBankCashDeposit.csproj" />
+</Solution>
