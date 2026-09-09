@@ -1,0 +1,7 @@
+OrderId,Customer,Amount,PromoCode
+O1,Sneha,2500,SAVE10
+O2,Amit,500,SAVE10
+O3,Priya,3000,WELCOME20
+O4,Rahul,1200,EXPIRED5
+O5,Kiran,4500,SAVE10
+O6,Sanjay,800,BOGUS

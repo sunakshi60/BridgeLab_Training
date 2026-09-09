@@ -1,0 +1,22 @@
+{
+  "promoCodes": [
+    {
+      "code": "SAVE10",
+      "percent": 10,
+      "minOrder": 1000,
+      "expired": false
+    },
+    {
+      "code": "WELCOME20",
+      "percent": 20,
+      "minOrder": 2000,
+      "expired": false
+    },
+    {
+      "code": "EXPIRED5",
+      "percent": 5,
+      "minOrder": 500,
+      "expired": true
+    }
+  ]
+}

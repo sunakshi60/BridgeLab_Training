@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="E-CommercePromotionAndOrderSettlementEngine/E-CommercePromotionAndOrderSettlementEngine.csproj" />
+  <Project Path="PromotionServiceTests.cs/PromotionServiceTests.cs.csproj" Id="e95f01f6-0541-43c2-9620-d020e6f777f3" />
+</Solution>
