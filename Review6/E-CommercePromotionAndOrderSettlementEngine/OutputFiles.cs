@@ -4,56 +4,46 @@ public class OutputFiles
 {
     public void WritePricedOrders(List<PricedOrder> orders)
     {
-        FileStream fileStream = new FileStream(
+        using (FileStream fileStream = new FileStream(
                 "priced_orders.json",
-                FileMode.Create);
+                FileMode.Create))
+        using (StreamWriter writer = new StreamWriter(fileStream))
+        {
+            string json = JsonConvert.SerializeObject(
+                    orders,
+                    Formatting.Indented);
 
-        StreamWriter writer = new StreamWriter(fileStream);
-
-        string json = JsonConvert.SerializeObject(
-                orders,
-                Formatting.Indented);
-
-        writer.Write(json);
-
-        writer.Close();
-        fileStream.Close();
+            writer.Write(json);
+        }
     }
 
     public void WriteSummary(OrderSummary summary)
     {
-        FileStream fileStream = new FileStream(
+        using (FileStream fileStream = new FileStream(
                 "order_summary.json",
-                FileMode.Create);
+                FileMode.Create))
+        using (StreamWriter writer = new StreamWriter(fileStream))
+        {
+            string json = JsonConvert.SerializeObject(
+                    summary,
+                    Formatting.Indented);
 
-        StreamWriter writer = new StreamWriter(fileStream);
-
-        string json = JsonConvert.SerializeObject(
-                summary,
-                Formatting.Indented);
-
-        writer.Write(json);
-
-        writer.Close();
-        fileStream.Close();
+            writer.Write(json);
+        }
     }
 
     public void WriteRejections(List<string> rejections)
     {
-        FileStream fileStream = new FileStream(
+        using (FileStream fileStream = new FileStream(
                 "rejections.log",
-                FileMode.Create);
-
-        BufferedStream bufferedStream = new BufferedStream(fileStream);
-        StreamWriter writer = new StreamWriter(bufferedStream);
-
-        foreach (string rejection in rejections)
+                FileMode.Create))
+        using (BufferedStream bufferedStream = new BufferedStream(fileStream))
+        using (StreamWriter writer = new StreamWriter(bufferedStream))
         {
-            writer.WriteLine(rejection);
+            foreach (string rejection in rejections)
+            {
+                writer.WriteLine(rejection);
+            }
         }
-
-        writer.Close();
-        bufferedStream.Close();
-        fileStream.Close();
     }
 }

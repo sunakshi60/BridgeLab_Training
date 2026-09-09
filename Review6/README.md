@@ -1,22 +1,21 @@
 # E-Commerce Promotion & Order Settlement Engine
 
-## 1. Objective
+## 1. Project Overview
 
-This project is a simple C# console application for processing e-commerce orders.
+This is a basic C# console application for processing e-commerce orders and applying promotion codes.
 
-The application:
+The project focuses on practicing:
 
-* Reads orders from a CSV file.
-* Reads promotion rules from a JSON file.
-* Validates orders and promotion codes.
-* Calculates discount and final amount.
-* Uses `MemoryStream` to temporarily stage successful order data.
-* Uses `BinaryWriter` to write financial data.
-* Uses `BinaryReader` to read and verify the data.
-* Uses `BufferedStream` for rejection logging.
-* Generates JSON output files.
-* Handles invalid orders using custom exceptions.
-* Uses NUnit for testing.
+* CSV file handling
+* JSON handling
+* Basic validation
+* Custom exceptions
+* Discount calculation
+* C# Streams
+* Binary data handling
+* NUnit testing
+
+The implementation is kept simple and focuses on the main requirements of the problem.
 
 ---
 
@@ -24,7 +23,7 @@ The application:
 
 ### orders.csv
 
-Contains order information:
+The order file contains:
 
 ```csv
 OrderId,Customer,Amount,PromoCode
@@ -38,7 +37,7 @@ O6,Sanjay,800,BOGUS
 
 ### discounts.json
 
-Contains promotion rules:
+Promotion details are stored in JSON:
 
 ```json
 {
@@ -67,150 +66,100 @@ Contains promotion rules:
 
 ---
 
-## 3. Validation
+## 3. Main Features
 
-The application performs the following validations:
+The application currently handles the main order-processing flow:
 
-### Order Validation
-
-* Order ID must be unique.
-* Amount must be greater than 0.
-
-### Promotion Validation
-
-* Promo code must exist.
-* Promo code must not be expired.
-* Order amount must satisfy the minimum order amount.
-
-If validation fails, the order is rejected and processing continues for the remaining orders.
-
----
-
-## 4. Custom Exceptions
-
-The project uses the following exception hierarchy:
-
-```text
-OrderException
-|
-|-- InvalidPromoCodeException
-|-- MinimumOrderNotMetException
-|-- DuplicateOrderException
-```
-
-### InvalidPromoCodeException
-
-Used when:
-
-* Promo code does not exist.
-* Promo code is expired.
-
-### MinimumOrderNotMetException
-
-Used when the order amount is less than the promotion's minimum order amount.
-
-### DuplicateOrderException
-
-Used when the same `OrderId` appears more than once.
+1. Read orders from CSV.
+2. Load promotions from JSON.
+3. Check order amount.
+4. Check duplicate OrderId.
+5. Check whether promo code exists.
+6. Check whether promo code is expired.
+7. Check minimum order amount.
+8. Calculate discount.
+9. Calculate final amount.
+10. Store successful orders.
+11. Generate output files.
+12. Handle rejected orders without stopping the complete process.
 
 ---
 
-## 5. Stream Concepts Used
+## 4. Streams Used
+
+The project demonstrates different C# stream classes.
 
 ### FileStream
 
-Used to open and read/write files.
-
-Example:
-
-```csharp
-FileStream fileStream =
-    new FileStream(filePath, FileMode.Open);
-```
+Used for opening input and output files.
 
 ### StreamReader
 
-Used to read text data from files such as CSV and JSON.
+Used to read CSV and JSON text.
 
 ### StreamWriter
 
-Used to write text data to output files.
+Used to write JSON and log files.
 
 ### MemoryStream
 
-Used to temporarily store successful order data in memory before it is committed.
+Used for temporary in-memory processing of order data.
 
 ### BinaryWriter
 
-Used to write order financial data in binary format.
-
-The following data is written:
-
-* OrderId
-* Customer
-* Amount
-* PromoCode
-* Discount
-* FinalAmount
+Used to write order data in binary form.
 
 ### BinaryReader
 
-Used to read the binary data and verify that the written data can be correctly decoded.
+Used to read the binary data again and verify it.
 
 ### BufferedStream
 
-Used while writing `rejections.log` to provide buffered file writing.
+Used while writing the rejection log.
 
 ---
 
-## 6. Processing Flow
+## 5. Validation
 
-The complete processing flow is:
+The following basic validations are implemented:
+
+### Amount Validation
+
+Order amount should be greater than zero.
+
+### Duplicate Order Validation
+
+The same OrderId should not be processed twice.
+
+### Promo Code Validation
+
+The promo code should exist in the promotion list.
+
+### Expiry Validation
+
+Expired promotion codes are rejected.
+
+### Minimum Order Validation
+
+The order amount should be greater than or equal to the promotion's minimum order amount.
+
+---
+
+## 6. Custom Exceptions
+
+The project contains:
 
 ```text
-orders.csv
-     |
-     v
-Read orders using FileStream + StreamReader
-     |
-     v
-Validate Order
-     |
-     v
-Find Promotion
-     |
-     v
-Validate Promotion
-     |
-     v
-Calculate Discount
-     |
-     v
-Stage successful order
-     |
-     v
-MemoryStream
-     |
-     v
-BinaryWriter
-     |
-     v
-BinaryReader
-     |
-     v
-Verify Data
-     |
-     +------------------+
-     |                  |
-     v                  v
- Successful          Rejected
-     |                  |
-     v                  v
-priced_orders.json  rejections.log
-     |
-     v
-order_summary.json
+OrderException
+    |
+    |-- InvalidPromoCodeException
+    |
+    |-- MinimumOrderNotMetException
+    |
+    |-- DuplicateOrderException
 ```
+
+These exceptions are used to handle different order validation failures.
 
 ---
 
@@ -219,98 +168,71 @@ order_summary.json
 The discount is calculated using:
 
 ```text
-Discount = Amount × Percent / 100
+Discount = Amount × Discount Percentage / 100
 ```
 
-Final amount:
+The final amount is:
 
 ```text
 Final Amount = Amount - Discount
 ```
 
-### Example
-
-For:
+For example:
 
 ```text
 Amount = 2500
-Promo = SAVE10
 Discount = 10%
-```
 
-Calculation:
-
-```text
-Discount = 2500 × 10 / 100
-         = 250
-
-Final Amount = 2500 - 250
-             = 2250
+Discount = 250
+Final Amount = 2250
 ```
 
 ---
 
-## 8. Expected Result
+## 8. Output Files
 
-For the given input:
-
-| Order | Result                   | Discount | Final Amount |
-| ----- | ------------------------ | -------: | -----------: |
-| O1    | Successful               |      250 |         2250 |
-| O2    | Rejected - Minimum Order |        0 |            - |
-| O3    | Successful               |      600 |         2400 |
-| O4    | Rejected - Expired Promo |        0 |            - |
-| O5    | Successful               |      450 |         4050 |
-| O6    | Rejected - Unknown Promo |        0 |            - |
-
-### Summary
-
-```text
-Total Orders       = 6
-Successful Orders  = 3
-Rejected Orders    = 3
-
-Total Amount       = 10000
-Total Discount     = 1300
-Total Final Amount = 8700
-```
-
----
-
-## 9. Output Files
+The application generates three output files.
 
 ### priced_orders.json
 
-Contains successfully processed orders with:
-
-* OrderId
-* Customer
-* Amount
-* PromoCode
-* Discount
-* FinalAmount
+Contains successfully processed orders and their calculated discount and final amount.
 
 ### order_summary.json
 
-Contains:
+Contains basic processing information such as:
 
-* TotalOrders
-* SuccessfulOrders
-* RejectedOrders
-* TotalAmount
-* TotalDiscount
-* TotalFinalAmount
+* Total orders
+* Successful orders
+* Rejected orders
+* Total amount
+* Total discount
+* Total final amount
 
 ### rejections.log
 
-Contains the reason for every rejected order.
+Contains rejected orders along with the reason for rejection.
 
-Example:
+---
+
+## 9. Expected Processing
+
+For the provided input:
 
 ```text
-O2: Minimum order amount is 1000
-O4: Promo code is expired: EXPIRED5
-O6: Promo code does not exist: BOGUS
+O1 → Successful
+O2 → Rejected - Minimum Order
+O3 → Successful
+O4 → Rejected - Expired Promo
+O5 → Successful
+O6 → Rejected - Unknown Promo
+```
+
+Expected successful orders:
+
+```text
+O1
+O3
+O5
 ```
 
 ---
@@ -319,45 +241,49 @@ O6: Promo code does not exist: BOGUS
 
 ```text
 ECommercePromotionEngine
-|
-|-- Models.cs
-|-- OrderException.cs
-|-- OrderRead.cs
-|-- PromotionLoad.cs
-|-- PromotionService.cs
-|-- BinaryHandler.cs
-|-- OrderProcessor.cs
-|-- OutputFiles.cs
-|-- Program.cs
-|
-|-- orders.csv
-|-- discounts.json
-|-- priced_orders.json
-|-- order_summary.json
-|-- rejections.log
-|
-|-- Tests
-    |
-    |-- UnitTests1
+│
+├── Models.cs
+├── Order.Exceptions.cs
+├── OrderRead.cs
+├── PromotionLoad.cs
+├── PromotionService.cs
+├── BinaryHandler.cs
+├── OrderProcessor.cs
+├── OutputFiles.cs
+├── Program.cs
+│
+├── orders.csv
+├── discounts.json
+│
+└── Tests
+    ├── PromotionTests.cs
+    └── BinaryTests.cs
 ```
 
 ---
 
 ## 11. Testing
 
-NUnit tests are included for:
+Basic NUnit testing has been added for the important functionality.
 
-1. Valid discount calculation.
-2. Expired promotion.
-3. Unknown promotion.
-4. Minimum order failure.
-5. Positive amount validation.
+The tests cover:
+
+* Valid discount calculation
+* Expired promotion
+* Unknown promotion
+* Minimum order failure
+* Duplicate order
+* Binary read/write verification
+
+The testing section is intentionally kept small and focuses on the main functionality rather than covering every possible edge case.
 
 ---
 
 ## 12. Error Handling
 
-A single invalid order should not stop the complete application.
+Invalid orders are handled using exceptions.
+
+An invalid order does not stop the complete processing.
 
 For example:
 
@@ -367,48 +293,36 @@ O2 → Invalid → Rejected
 O3 → Valid → Processed
 ```
 
-The application continues processing `O3` even though `O2` failed.
+Processing continues after the rejected order.
 
 ---
 
-## 13. Important Assumptions
+## 13. Current Scope
 
-* CSV fields are separated using commas.
-* The CSV file contains a header row.
-* Amount is expected to be a valid decimal number.
-* Promo codes are matched exactly.
-* Rejected orders are not included in the successful priced orders.
-* Only successfully validated orders are staged and committed.
-* Output files are created/overwritten during each run.
+This implementation focuses on the **main functionality of the assignment** using simple C# concepts.
+
+Some advanced improvements and additional edge-case handling are outside the current scope.
+
+The main purpose of the project is to demonstrate practical understanding of:
+
+* File I/O
+* JSON
+* Streams
+* Exceptions
+* Basic collections
+* NUnit testing
 
 ---
 
 ## 14. How to Run
 
-### Step 1
-
-Open the project in Visual Studio or VS Code.
-
-### Step 2
-
-Make sure these files are present:
-
-```text
-orders.csv
-discounts.json
-```
-
-### Step 3
-
-Run the application:
+Run the application using:
 
 ```bash
 dotnet run
 ```
 
-### Step 4
-
-Check the generated files:
+After execution, check:
 
 ```text
 priced_orders.json
@@ -418,34 +332,12 @@ rejections.log
 
 ---
 
-## 15. How to Run Tests
+## 15. Run Tests
 
-Run:
+To run the NUnit tests:
 
 ```bash
 dotnet test
 ```
 
-NUnit will execute all test cases and display the result in the terminal.
-
----
-
-## 16. Main Concepts Demonstrated
-
-This project demonstrates practical use of:
-
-* C# Classes and Objects
-* Exception Handling
-* Custom Exceptions
-* CSV File Processing
-* JSON Deserialization
-* `FileStream`
-* `StreamReader`
-* `StreamWriter`
-* `MemoryStream`
-* `BinaryWriter`
-* `BinaryReader`
-* `BufferedStream`
-* `using` for resource management
-* NUnit Testing
-* Basic collections such as `List<T>` and `HashSet<T>`
+The tests verify the main discount, validation, processing, and binary handling functionality.

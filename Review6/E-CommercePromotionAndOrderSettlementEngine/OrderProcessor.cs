@@ -46,16 +46,9 @@ public class OrderProcessor
         }
 
         ProcessingResult result = new ProcessingResult();
-        result.SuccessfulOrders =successfulOrders;
-        result.Rejections =rejections;
-        result.TotalOrders =orders.Count;
+        result.TotalOrders = orders.Count;
+        result.SuccessfulOrders = successfulOrders;
+        result.Rejections = rejections;
         return result;
     }
-}
-
-public class ProcessingResult
-{
-    public int TotalOrders { get; set; }
-    public List<PricedOrder> SuccessfulOrders{ get; set; }
-    public List<string> Rejections{ get; set; }
 }
