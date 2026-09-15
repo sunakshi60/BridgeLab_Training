@@ -4,14 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Singleton Pattern
+        //-------Singleton Pattern---------
         //LibraryCatalog catalog1 = LibraryCatalog.Instance;
         //LibraryCatalog catalog2 = LibraryCatalog.Instance;
         //catalog1.ShowMessage();
         //Console.WriteLine(catalog1 == catalog2);
 
 
-        //FactoryMethod Pattern
+        //--------FactoryMethod Pattern--------
         //ReportCreator creator;
         //creator = new PDFReportCreator();
         //creator.GenerateReport();
@@ -21,17 +21,37 @@ class Program
         //creator.GenerateReport();
 
 
-        //AbstractFactory Pattern
-        IVehicleFactory factory;
-        factory = new RegularVehicleFactory();
-        IBike bike = factory.CreateBike();
-        ICar car = factory.CreateCar();
-        bike.GetDetails();
-        car.GetDetails();
-        factory = new SportsVehicleFactory();
-        bike = factory.CreateBike();
-        car = factory.CreateCar();
-        bike.GetDetails();
-        car.GetDetails();
+        //------AbstractFactory Pattern------
+        //IVehicleFactory factory;
+        //factory = new RegularVehicleFactory();
+        //IBike bike = factory.CreateBike();
+        //ICar car = factory.CreateCar();
+        //bike.GetDetails();
+        //car.GetDetails();
+        //factory = new SportsVehicleFactory();
+        //bike = factory.CreateBike();
+        //car = factory.CreateCar();
+        //bike.GetDetails();
+        //car.GetDetails();
+
+        //-----Adapter Pattern--------
+        // string[,] employeesArray =
+        //{
+        //     { "101", "John", "SE", "10000" },
+        //     { "102", "Smith", "SE", "20000" },
+        //     { "103", "Dev", "SSE", "30000" },
+        //     { "104", "Pam", "SE", "40000" },
+        //     { "105", "Sara", "SSE", "50000" }
+        // };
+        // ITarget target = new EmployeeAdapter();
+        // target.ProcessCompanySalary(employeesArray);
+
+        //------Facade Pattern------
+        Order order = new Order();
+        order.PlaceOrder();
+
+        Console.ReadLine();
+
+
     }
 }
