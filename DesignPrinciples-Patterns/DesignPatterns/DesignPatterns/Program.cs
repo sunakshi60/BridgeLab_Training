@@ -47,11 +47,35 @@ class Program
         // target.ProcessCompanySalary(employeesArray);
 
         //------Facade Pattern------
-        Order order = new Order();
-        order.PlaceOrder();
+        //Order order = new Order();
+        //order.PlaceOrder();
+
+
+        //-----Command Pattern-----
+        //Document document = new Document();
+        //ICommand openCommand = new OpenCommand(document);
+        //ICommand saveCommand = new SaveCommand(document);
+        //ICommand closeCommand = new CloseCommand(document);
+        //MenuOptions menu = new MenuOptions(
+        //    openCommand,
+        //    saveCommand,
+        //    closeCommand
+        //);
+        //menu.ClickOpen();
+        //menu.ClickSave();
+        //menu.ClickClose();
+
+
+        //----Observer Pattern----
+        BookCatalog catalog = new BookCatalog();
+        UserObserver user1 = new UserObserver("Amit");
+        UserObserver user2 = new UserObserver("Neha");
+        catalog.AddObserver(user1);
+        catalog.AddObserver(user2);
+        catalog.NewBookArrived("C# in Depth");
+        catalog.RemoveObserver(user1);
+        catalog.NewBookArrived("ASP.NET Core Microservices");
 
         Console.ReadLine();
-
-
     }
 }
